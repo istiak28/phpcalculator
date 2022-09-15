@@ -1,94 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
+    
+    <body>
 
-    <div class="main">
+        <div class="main">
 
-        <form method="POST">
+            <form method="POST">
 
-            <input type="text" name="num1" placeholder="Enter First Number">
-            <input type="text" name="num2" placeholder="Enter Second Number">
+                <input type="text" name="num1" placeholder="Enter First Number">
+                <input type="text" name="num2" placeholder="Enter Second Number">
 
-            <select name="opr">
+                <select name="opr">
 
-                <option value="add">ADD</option>
-                <option value="sub">SUB</option>
-                <option value="div">DIV</option>
-                <option value="mul">MUL</option>
+                    <option value="add">ADD</option>
+                    <option value="sub">SUB</option>
+                    <option value="div">DIV</option>
+                    <option value="mul">MUL</option>
 
-            </select>
+                </select>
 
-            <input type="submit" value="submit" name="submit">
+                <input type="submit" value="submit" name="submit">
 
-        </form>
+            </form>
 
-    </div>
+        </div>
 
-    <div class="result">
+        <div class="result">
 
-        <p>
-            <?php
-                if(isset($_POST['submit'])){
+            <p>
+                <?php
+                    if(isset($_POST['submit'])){
 
-                    $num1 = $_POST['num1'];
-                    $num2 = $_POST['num2'];
+                        $num1 = $_POST['num1'];
+                        $num2 = $_POST['num2'];
 
-                    $opr = $_POST['opr'];
+                        $opr = $_POST['opr'];
 
-                    switch($opr){
-                        
-                        case "add":
-                            $addition = $num1 + $num2;
-                            echo "The result is : {$addition}";
-                            break;
-                        
-                        case "sub":
-                            $sub = $num1 - $num2;
-                            echo "The Addition is : {$sub}";
-                            break;
+                        switch($opr){
 
-                            case "div":
-                                $div = $num1 / $num2;
-                                echo "The Addition is : {$div}";
+                            case "add":
+                                $addition = $num1 + $num2;
+                                echo "The result is : {$addition}";
                                 break;
 
-                                case "mul":
-                                    $mul = $num1 * $num2;
-                                    echo "The Addition is : {$mul}";
+                            case "sub":
+                                $sub = $num1 - $num2;
+                                echo "The Addition is : {$sub}";
+                                break;
+
+                                case "div":
+                                    $div = $num1 / $num2;
+                                    echo "The Addition is : {$div}";
                                     break;
 
-                        default:
-                        echo "Sorry Not Valid";
+                                    case "mul":
+                                        $mul = $num1 * $num2;
+                                        echo "The Addition is : {$mul}";
+                                        break;
 
+                            default:
+                            echo "Sorry Not Valid";
 
-
+                        }
                     }
+                ?>
+            </p>
 
-                }
+        </div>
 
-
-
-
-            ?>
-        </p>
-
-    </div>
-    
-
-
-    <?php
-
-
-
-
-    ?>
-
-    
-</body>
+    </body>
 </html>
